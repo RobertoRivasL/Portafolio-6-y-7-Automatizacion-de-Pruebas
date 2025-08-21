@@ -1,0 +1,120 @@
+📊 REPORTE COMPLETO DE MÉTRICAS - API MEDIPLUS
+================================================================================
+📅 Fecha: 20/08/2025 14:17:21
+👥 Autores: Antonio B. Arriagada LL., Dante Escalona Bustos, Roberto Rivas Lopez
+
+🎯 RESUMEN EJECUTIVO
+--------------------------------------------------
+Total de métricas analizadas: 13
+Métricas críticas: 4
+Tiempo promedio general: 1719 ms
+
+📋 DETALLES POR MÉTRICA
+--------------------------------------------------
+
+🎯 Escenario Detectado - 10 usuarios:
+   Tiempo promedio: 2980 ms
+   Percentil 90: 5112 ms
+   Percentil 95: 5112 ms
+   Throughput: 0,7 req/s
+   Tasa de error: 0,0%
+   Nivel: Regular
+
+🎯 Escenario Detectado - 20250819 usuarios:
+   Tiempo promedio: 646 ms
+   Percentil 90: 1657 ms
+   Percentil 95: 1657 ms
+   Throughput: 2,7 req/s
+   Tasa de error: 0,0%
+   Nivel: Excelente
+
+🎯 Escenario Detectado - 20250819 usuarios:
+   Tiempo promedio: 3710 ms
+   Percentil 90: 9548 ms
+   Percentil 95: 9548 ms
+   Throughput: 0,5 req/s
+   Tasa de error: 0,0%
+   Nivel: Malo
+
+🎯 GET Masivo - 10 usuarios:
+   Tiempo promedio: 506 ms
+   Percentil 90: 679 ms
+   Percentil 95: 717 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 0,0%
+   Nivel: Excelente
+
+🎯 GET Masivo - 50 usuarios:
+   Tiempo promedio: 1124 ms
+   Percentil 90: 1334 ms
+   Percentil 95: 1355 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 0,5%
+   Nivel: Bueno
+
+🎯 GET Masivo - 100 usuarios:
+   Tiempo promedio: 2397 ms
+   Percentil 90: 2592 ms
+   Percentil 95: 2613 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 13,0%
+   Nivel: Malo
+
+🎯 GET Masivo - 2025 usuarios:
+   Tiempo promedio: 38 ms
+   Percentil 90: 42 ms
+   Percentil 95: 47 ms
+   Throughput: 204,0 req/s
+   Tasa de error: 0,0%
+   Nivel: Excelente
+
+🎯 GET+POST Combinado - 10 usuarios:
+   Tiempo promedio: 580 ms
+   Percentil 90: 773 ms
+   Percentil 95: 793 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 0,0%
+   Nivel: Excelente
+
+🎯 GET+POST Combinado - 50 usuarios:
+   Tiempo promedio: 1366 ms
+   Percentil 90: 1545 ms
+   Percentil 95: 1585 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 1,5%
+   Nivel: Bueno
+
+🎯 GET+POST Combinado - 100 usuarios:
+   Tiempo promedio: 3142 ms
+   Percentil 90: 3335 ms
+   Percentil 95: 3353 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 12,0%
+   Nivel: Malo
+
+🎯 POST Masivo - 10 usuarios:
+   Tiempo promedio: 644 ms
+   Percentil 90: 828 ms
+   Percentil 95: 860 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 0,0%
+   Nivel: Excelente
+
+🎯 POST Masivo - 50 usuarios:
+   Tiempo promedio: 1497 ms
+   Percentil 90: 1701 ms
+   Percentil 95: 1714 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 3,5%
+   Nivel: Bueno
+
+🎯 POST Masivo - 100 usuarios:
+   Tiempo promedio: 3714 ms
+   Percentil 90: 3901 ms
+   Percentil 95: 3932 ms
+   Throughput: 1,0 req/s
+   Tasa de error: 12,5%
+   Nivel: Malo
+
+================================================================================
+Reporte generado automáticamente por AnalizadorMetricas.java

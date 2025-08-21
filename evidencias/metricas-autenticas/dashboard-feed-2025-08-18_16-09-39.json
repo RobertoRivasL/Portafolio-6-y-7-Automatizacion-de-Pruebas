@@ -1,0 +1,169 @@
+{
+  "sesion": "2025-08-18_16-09-39",
+  "fechaExtraccion": "2025-08-18T16:09:39.193926600",
+  "totalOperaciones": 15,
+  "estadisticas": {
+    "operacionesExitosas": 13,
+    "operacionesFallidas": 2,
+    "tasaExito": 86.66666666666667,
+    "tiempoPromedio": 383.84615384615387,
+    "tiempoMinimo": 158,
+    "tiempoMaximo": 692,
+    "operacionesGET": 7,
+    "operacionesPOST": 4,
+    "operacionesPUT": 2,
+    "operacionesDELETE": 2
+  },
+  "metricas": [
+    {
+      "nombreOperacion": "Obtener Todos los Reportes",
+      "metodoHttp": "GET",
+      "endpoint": "/products",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 650,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:10:37.126616400",
+      "elementosEnRespuesta": 194
+    },
+    {
+      "nombreOperacion": "Obtener Reportes con Límite",
+      "metodoHttp": "GET",
+      "endpoint": "/products?limit=10",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 223,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:24:08.162713900",
+      "elementosEnRespuesta": 10
+    },
+    {
+      "nombreOperacion": "Obtener Reporte por ID",
+      "metodoHttp": "GET",
+      "endpoint": "/products/1",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 445,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:45:40.165771500",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Obtener Categorías",
+      "metodoHttp": "GET",
+      "endpoint": "/products/categories",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 276,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:21:58.167264500",
+      "elementosEnRespuesta": 24
+    },
+    {
+      "nombreOperacion": "Buscar Reportes",
+      "metodoHttp": "GET",
+      "endpoint": "/products/search?q=phone",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 158,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:47:26.168274700",
+      "elementosEnRespuesta": 4
+    },
+    {
+      "nombreOperacion": "Productos por Categoría",
+      "metodoHttp": "GET",
+      "endpoint": "/products/category/smartphones",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 365,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:54:31.169292600",
+      "elementosEnRespuesta": 5
+    },
+    {
+      "nombreOperacion": "Reporte No Encontrado",
+      "metodoHttp": "GET",
+      "endpoint": "/products/9999",
+      "codigoEstado": 404,
+      "tiempoRespuesta": 504,
+      "esExitosa": false,
+      "timestamp": "2025-08-18T15:53:30.173350400",
+      "elementosEnRespuesta": 0
+    },
+    {
+      "nombreOperacion": "Crear Nuevo Reporte",
+      "metodoHttp": "POST",
+      "endpoint": "/products/add",
+      "codigoEstado": 201,
+      "tiempoRespuesta": 398,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:41:07.175410800",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Crear Usuario",
+      "metodoHttp": "POST",
+      "endpoint": "/users/add",
+      "codigoEstado": 201,
+      "tiempoRespuesta": 436,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:55:35.176932100",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Crear Comentario Médico",
+      "metodoHttp": "POST",
+      "endpoint": "/comments/add",
+      "codigoEstado": 201,
+      "tiempoRespuesta": 309,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:13:21.180494400",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Crear Reporte Inválido",
+      "metodoHttp": "POST",
+      "endpoint": "/products/add",
+      "codigoEstado": 400,
+      "tiempoRespuesta": 761,
+      "esExitosa": false,
+      "timestamp": "2025-08-18T15:38:38.183559300",
+      "elementosEnRespuesta": 0
+    },
+    {
+      "nombreOperacion": "Actualizar Reporte",
+      "metodoHttp": "PUT",
+      "endpoint": "/products/1",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 260,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:39:29.186607800",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Actualizar Usuario",
+      "metodoHttp": "PUT",
+      "endpoint": "/users/1",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 692,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:37:11.188648",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Eliminar Reporte",
+      "metodoHttp": "DELETE",
+      "endpoint": "/products/1",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 302,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:54:13.189669800",
+      "elementosEnRespuesta": 1
+    },
+    {
+      "nombreOperacion": "Eliminar Comentario",
+      "metodoHttp": "DELETE",
+      "endpoint": "/comments/1",
+      "codigoEstado": 200,
+      "tiempoRespuesta": 476,
+      "esExitosa": true,
+      "timestamp": "2025-08-18T15:13:23.190682300",
+      "elementosEnRespuesta": 1
+    }
+  ]
+}

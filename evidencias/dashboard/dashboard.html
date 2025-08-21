@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Dashboard API MediPlus - Evidencias de Rendimiento</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .metric-card.excelente {
+            border-left-color: #27ae60;
+        }
+
+        .metric-card.bueno {
+            border-left-color: #2980b9;
+        }
+
+        .metric-card.regular {
+            border-left-color: #f39c12;
+        }
+
+        .metric-card.malo {
+            border-left-color: #e67e22;
+        }
+
+        .metric-card.inaceptable {
+            border-left-color: #e74c3c;
+        }
+
+        .metric-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .metric-subtitle {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .charts-section {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .summary-section {
+            padding: 30px;
+            background: white;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .summary-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .summary-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .summary-list {
+            list-style: none;
+        }
+
+        .summary-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .summary-list li:last-child {
+            border-bottom: none;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-success {
+            background-color: #27ae60;
+        }
+
+        .status-warning {
+            background-color: #f39c12;
+        }
+
+        .status-error {
+            background-color: #e74c3c;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>📊 Dashboard API MediPlus</h1>
+            <p>Framework de Evidencias - Pruebas de Rendimiento Automatizadas</p>
+            <p>Generado:19/08/2025 11:41:51</p>
+            <p>👥 Antonio B. Arriagada LL., Dante Escalona Bustos, Roberto Rivas Lopez</p>
+        </div>
+
+        <div class="metrics-grid">
+<div class="metric-card">
+    <div class="metric-title">🎯 Total de Pruebas</div>
+    <div class="metric-value">9</div>
+    <div class="metric-subtitle">Escenarios ejecutados</div>
+</div>
+
+<div class="metric-card excelente">
+    <div class="metric-title">✅ Tasa de Éxito</div>
+    <div class="metric-value">100,0%</div>
+    <div class="metric-subtitle">Pruebas sin errores críticos</div>
+</div>
+
+<div class="metric-card">
+    <div class="metric-title">⏱️ Tiempo Promedio</div>
+    <div class="metric-value">1217 ms</div>
+    <div class="metric-subtitle">Tiempo de respuesta global</div>
+</div>
+
+<div class="metric-card">
+    <div class="metric-title">🔄 Throughput Promedio</div>
+    <div class="metric-value">43,5</div>
+    <div class="metric-subtitle">Requests por segundo</div>
+</div>
+<div class="metric-card excelente">
+    <div class="metric-title">🏆 Mejor Rendimiento</div>
+    <div class="metric-value">GET Masivo</div>
+    <div class="metric-subtitle">10 usuarios - 218 ms</div>
+</div>
+<div class="metric-card malo">
+    <div class="metric-title">⚠️ Requiere Atención</div>
+    <div class="metric-value">POST Masivo</div>
+    <div class="metric-subtitle">100 usuarios - 3089 ms</div>
+</div>
+        </div>
+
+    <div class="charts-section">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">📈 Análisis Gráfico de Rendimiento</h2>
+        <div class="charts-grid">
+            <div class="chart-container">
+                <div class="chart-title">⏱️ Tiempo de Respuesta vs Usuarios</div>
+                <canvas id="tiempoRespuestaChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">🔄 Throughput vs Carga</div>
+                <canvas id="throughputChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="summary-section">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">📋 Resumen Ejecutivo</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h3>🎯 Hallazgos Principales</h3>
+                <ul class="summary-list">
+<li><span class="status-indicator status-success"></span>Sistema estable con carga baja (10 usuarios)</li>
+<li><span class="status-indicator status-warning"></span>Tiempo promedio global: 1217 ms</li>
+<li><span class="status-indicator status-error"></span>2 escenarios con rendimiento crítico</li>
+<li><span class="status-indicator status-error"></span>Escalabilidad: Requiere optimización</li>
+                </ul>
+            </div>
+            <div class="summary-card">
+                <h3>💡 Recomendaciones</h3>
+                <ul class="summary-list">
+<li>Implementar caché para reducir latencia en operaciones frecuentes</li>
+<li>Configurar límites de throttling para proteger el sistema</li>
+<li>Optimizar consultas de base de datos en endpoints POST</li><li>Implementar circuit breaker para manejo de errores</li><li>Considerar arquitectura de microservicios para escalabilidad</li>
+<li>Integrar métricas en tiempo real en pipeline CI/CD</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Datos para gráficas
+    const datosEscenarios = {
+        'GET Masivo': {
+            usuarios: [10, 50, 100],
+            tiempos: [218,2, 688,1, 1493,8],
+            throughput: [50,0, 59,5, 61,0]
+        },
+        'GET+POST Combinado': {
+            usuarios: [10, 50, 100],
+            tiempos: [306,1, 994,2, 2480,4],
+            throughput: [36,4, 43,3, 44,3]
+        },
+        'POST Masivo': {
+            usuarios: [10, 50, 100],
+            tiempos: [292,8, 1392,8, 3088,6],
+            throughput: [28,6, 34,0, 34,8]
+        },
+    };
+
+    // Configuración de gráfica de tiempo de respuesta
+    const ctxTiempo = document.getElementById('tiempoRespuestaChart').getContext('2d');
+    new Chart(ctxTiempo, {
+        type: 'line',
+        data: {
+            labels: datosEscenarios['GET Masivo'].usuarios,
+            datasets: Object.keys(datosEscenarios).map((escenario, index) => ({
+                label: escenario,
+                data: datosEscenarios[escenario].tiempos,
+                borderColor: ['#3498db', '#e74c3c', '#f39c12'][index],
+                backgroundColor: ['#3498db', '#e74c3c', '#f39c12'][index] + '20',
+                borderWidth: 3,
+                fill: false,
+                tension: 0.4
+            }))
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: { display: true, text: 'Usuarios Concurrentes' }
+                },
+                y: {
+                    title: { display: true, text: 'Tiempo de Respuesta (ms)' }
+                }
+            },
+            plugins: {
+                legend: { position: 'top' }
+            }
+        }
+    });
+
+    // Configuración de gráfica de throughput
+    const ctxThroughput = document.getElementById('throughputChart').getContext('2d');
+    new Chart(ctxThroughput, {
+        type: 'bar',
+        data: {
+            labels: datosEscenarios['GET Masivo'].usuarios,
+            datasets: Object.keys(datosEscenarios).map((escenario, index) => ({
+                label: escenario,
+                data: datosEscenarios[escenario].throughput,
+                backgroundColor: ['#3498db', '#e74c3c', '#f39c12'][index] + '80',
+                borderColor: ['#3498db', '#e74c3c', '#f39c12'][index],
+                borderWidth: 2
+            }))
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: { display: true, text: 'Usuarios Concurrentes' }
+                },
+                y: {
+                    title: { display: true, text: 'Throughput (req/s)' }
+                }
+            },
+            plugins: {
+                legend: { position: 'top' }
+            }
+        }
+    });
+});
+</script>
+    <div class="footer">
+        <p>🚀 Framework de Evidencias API MediPlus - Desarrollado con ❤️ por el equipo de QA</p>
+        <p>📧 Contacto: anarriag@gmail.com, Jacobo.bustos.22@gmail.com, umancl@gmail.com</p>
+    </div>
+</div>
+</body>
+</html>

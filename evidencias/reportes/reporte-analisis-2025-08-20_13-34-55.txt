@@ -1,0 +1,90 @@
+====================================================================================================
+📊 REPORTE COMPLETO DE ANÁLISIS DE MÉTRICAS - API MEDIPLUS
+Fecha de generación: 20/08/2025 13:34:55
+====================================================================================================
+
+📋 RESUMEN EJECUTIVO
+--------------------------------------------------
+Total de escenarios analizados: 5
+Total de ejecuciones: 13
+Ejecuciones con rendimiento crítico: 5
+
+📊 MÉTRICAS DETALLADAS POR ESCENARIO
+--------------------------------------------------
+
+🎯 TEST
+------------------------------
+  Usuarios: 1 | Tiempo promedio: 2980 ms | Throughput: 0,8 req/s | Error: 0,0% | Nivel: Malo
+  Usuarios: 2 | Tiempo promedio: 646 ms | Throughput: 3,0 req/s | Error: 0,0% | Nivel: Bueno
+  Usuarios: 1 | Tiempo promedio: 3710 ms | Throughput: 0,5 req/s | Error: 0,0% | Nivel: Malo
+
+🎯 POST
+------------------------------
+  Usuarios: 1 | Tiempo promedio: 3714 ms | Throughput: 1,0 req/s | Error: 12,5% | Nivel: Inaceptable
+  Usuarios: 1 | Tiempo promedio: 644 ms | Throughput: 1,0 req/s | Error: 0,0% | Nivel: Bueno
+  Usuarios: 1 | Tiempo promedio: 1497 ms | Throughput: 1,0 req/s | Error: 3,5% | Nivel: Regular
+
+🎯 MIXTO
+------------------------------
+  Usuarios: 1 | Tiempo promedio: 3142 ms | Throughput: 1,0 req/s | Error: 12,0% | Nivel: Inaceptable
+  Usuarios: 1 | Tiempo promedio: 580 ms | Throughput: 1,0 req/s | Error: 0,0% | Nivel: Bueno
+  Usuarios: 1 | Tiempo promedio: 1366 ms | Throughput: 1,0 req/s | Error: 1,5% | Nivel: Regular
+
+🎯 GET
+------------------------------
+  Usuarios: 100 | Tiempo promedio: 38 ms | Throughput: 206,1 req/s | Error: 0,0% | Nivel: Excelente
+
+🎯 GET
+------------------------------
+  Usuarios: 1 | Tiempo promedio: 2397 ms | Throughput: 1,0 req/s | Error: 13,0% | Nivel: Inaceptable
+  Usuarios: 1 | Tiempo promedio: 506 ms | Throughput: 1,0 req/s | Error: 0,0% | Nivel: Bueno
+  Usuarios: 1 | Tiempo promedio: 1124 ms | Throughput: 1,0 req/s | Error: 0,5% | Nivel: Regular
+
+🔍 ANÁLISIS COMPARATIVO
+--------------------------------------------------
+
+📈 test
+  Mejor rendimiento: 2 usuarios (646 ms)
+  Peor rendimiento: 1 usuarios (3710 ms)
+  Throughput promedio: 1,4 req/s
+
+📈 post
+  Mejor rendimiento: 1 usuarios (644 ms)
+  Peor rendimiento: 1 usuarios (3714 ms)
+  Throughput promedio: 1,0 req/s
+
+📈 mixto
+  Mejor rendimiento: 1 usuarios (580 ms)
+  Peor rendimiento: 1 usuarios (3142 ms)
+  Throughput promedio: 1,0 req/s
+
+📈 GET
+  Mejor rendimiento: 100 usuarios (38 ms)
+  Peor rendimiento: 100 usuarios (38 ms)
+  Throughput promedio: 206,1 req/s
+
+📈 get
+  Mejor rendimiento: 1 usuarios (506 ms)
+  Peor rendimiento: 1 usuarios (2397 ms)
+  Throughput promedio: 1,0 req/s
+
+💡 RECOMENDACIONES DETALLADAS
+--------------------------------------------------
+
+🎯 test:
+  1. 📈 Throughput bajo (1,4 req/s). Considerar optimización de conexiones de base de datos y implementar connection pooling.
+  2. 📊 Alta variabilidad en tiempos de respuesta detectada. Implementar monitoring detallado y revisar garbage collection de JVM.
+
+🎯 post:
+  3. ⚠️ Tasa de error elevada (5,3%). Revisar logs de errores y implementar retry con backoff exponencial.
+  4. 📈 Throughput bajo (1,0 req/s). Considerar optimización de conexiones de base de datos y implementar connection pooling.
+
+🎯 mixto:
+  5. 📈 Throughput bajo (1,0 req/s). Considerar optimización de conexiones de base de datos y implementar connection pooling.
+
+🎯 GET:
+  6. 📊 Alta variabilidad en tiempos de respuesta detectada. Implementar monitoring detallado y revisar garbage collection de JVM.
+
+🎯 get:
+  7. 📈 Throughput bajo (1,0 req/s). Considerar optimización de conexiones de base de datos y implementar connection pooling.
+

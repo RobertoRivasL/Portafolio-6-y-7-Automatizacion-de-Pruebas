@@ -1,0 +1,25 @@
+============================================================
+📊 REPORTE DE PRUEBAS BÁSICAS - API MEDIPLUS
+🕐 Fecha: 19/08/2025 12:09:23
+👥 Autores: Antonio B. Arriagada LL., Dante Escalona Bustos, Roberto Rivas Lopez
+============================================================
+
+✅ Todas las pruebas ejecutadas correctamente:
+  - Creación de métricas
+  - Evaluación de niveles de rendimiento
+  - Validaciones de parámetros
+
+🎯 Estado: EXITOSO
+📍 Ubicación: D:\Doc_HP_RRL\RRL\Sence\Iseg Spa\Modulo 7\Ejercicios\Portafolio 7\P6yP7\02\pruebas-api-mediplus\reportes\reporte-pruebas-2025-08-19_12-09-23.txt
+
+🔧 Detalles Técnicos:
+  - Framework: Pruebas básicas sin JUnit
+  - Patrón: Builder para construcción de métricas
+  - Validaciones: NullPointerException, IllegalArgumentException
+  - Niveles: EXCELENTE, BUENO, REGULAR, MALO, INACEPTABLE
+
+📈 Próximos Pasos:
+  1. Implementar pruebas REST Assured
+  2. Configurar scripts JMeter
+  3. Integrar con pipeline CI/CD
+  4. Completar documentación técnica

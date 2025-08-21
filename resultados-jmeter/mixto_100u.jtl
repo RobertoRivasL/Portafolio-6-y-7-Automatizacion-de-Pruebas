@@ -1,0 +1,201 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Filename,latency,encoding,SampleCount,ErrorCount,hostname,idleTime
+1703001001000,3273,Mixto,200,OK,Thread Group 1-2,,true,,2372,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001002000,3253,Mixto,200,OK,Thread Group 1-3,,true,,3043,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001003000,3008,Mixto,200,OK,Thread Group 1-4,,true,,2488,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001004000,2983,Mixto,200,OK,Thread Group 1-5,,true,,2772,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001005000,3339,Mixto,200,OK,Thread Group 1-6,,true,,2373,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001006000,2939,Mixto,200,OK,Thread Group 1-7,,true,,2319,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001007000,3284,Mixto,200,OK,Thread Group 1-8,,true,,1785,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001008000,3014,Mixto,200,OK,Thread Group 1-9,,true,,1999,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001009000,3197,Mixto,200,OK,Thread Group 1-10,,true,,2292,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001010000,3146,Mixto,200,OK,Thread Group 1-11,,true,,2880,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001011000,3271,Mixto,200,OK,Thread Group 1-12,,true,,1240,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001012000,3125,Mixto,500,OK,Thread Group 1-13,,false,Internal Server Error,2738,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001013000,3006,Mixto,500,OK,Thread Group 1-14,,false,Internal Server Error,2439,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001014000,3268,Mixto,200,OK,Thread Group 1-15,,true,,2040,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001015000,3118,Mixto,500,OK,Thread Group 1-16,,false,Internal Server Error,1783,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001016000,3302,Mixto,200,OK,Thread Group 1-17,,true,,1414,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001017000,3274,Mixto,200,OK,Thread Group 1-18,,true,,1108,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001018000,3204,Mixto,200,OK,Thread Group 1-19,,true,,1795,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001019000,3321,Mixto,200,OK,Thread Group 1-20,,true,,2815,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001020000,3317,Mixto,200,OK,Thread Group 1-21,,true,,2906,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001021000,3237,Mixto,200,OK,Thread Group 1-22,,true,,2330,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001022000,3043,Mixto,200,OK,Thread Group 1-23,,true,,2374,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001023000,3207,Mixto,200,OK,Thread Group 1-24,,true,,2330,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001024000,3143,Mixto,200,OK,Thread Group 1-25,,true,,1848,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001025000,2956,Mixto,200,OK,Thread Group 1-26,,true,,1616,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001026000,3243,Mixto,200,OK,Thread Group 1-27,,true,,2409,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001027000,2966,Mixto,200,OK,Thread Group 1-28,,true,,1277,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001028000,3211,Mixto,200,OK,Thread Group 1-29,,true,,1350,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001029000,3174,Mixto,200,OK,Thread Group 1-30,,true,,2675,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001030000,3135,Mixto,200,OK,Thread Group 1-31,,true,,2163,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001031000,3319,Mixto,200,OK,Thread Group 1-32,,true,,1710,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001032000,3229,Mixto,200,OK,Thread Group 1-33,,true,,2803,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001033000,3303,Mixto,200,OK,Thread Group 1-34,,true,,2832,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001034000,3072,Mixto,200,OK,Thread Group 1-35,,true,,2491,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001035000,2996,Mixto,200,OK,Thread Group 1-36,,true,,1219,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001036000,2907,Mixto,200,OK,Thread Group 1-37,,true,,1364,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001037000,3211,Mixto,200,OK,Thread Group 1-38,,true,,1461,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001038000,3374,Mixto,200,OK,Thread Group 1-39,,true,,2675,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001039000,3111,Mixto,200,OK,Thread Group 1-40,,true,,2476,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001040000,2968,Mixto,200,OK,Thread Group 1-41,,true,,2940,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001041000,2896,Mixto,200,OK,Thread Group 1-42,,true,,1286,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001042000,3151,Mixto,200,OK,Thread Group 1-43,,true,,2994,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001043000,3021,Mixto,200,OK,Thread Group 1-44,,true,,1255,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001044000,3307,Mixto,200,OK,Thread Group 1-45,,true,,2515,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001045000,3185,Mixto,200,OK,Thread Group 1-46,,true,,1922,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001046000,3197,Mixto,200,OK,Thread Group 1-47,,true,,2508,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001047000,2891,Mixto,200,OK,Thread Group 1-48,,true,,1800,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001048000,3057,Mixto,500,OK,Thread Group 1-49,,false,Internal Server Error,3040,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001049000,3016,Mixto,200,OK,Thread Group 1-50,,true,,2380,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001050000,3184,Mixto,500,OK,Thread Group 1-51,,false,Internal Server Error,1210,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001051000,2989,Mixto,200,OK,Thread Group 1-52,,true,,1564,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001052000,3228,Mixto,500,OK,Thread Group 1-53,,false,Internal Server Error,1887,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001053000,3079,Mixto,200,OK,Thread Group 1-54,,true,,1062,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001054000,3020,Mixto,200,OK,Thread Group 1-55,,true,,1867,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001055000,2987,Mixto,200,OK,Thread Group 1-56,,true,,2801,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001056000,3352,Mixto,200,OK,Thread Group 1-57,,true,,2256,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001057000,2978,Mixto,200,OK,Thread Group 1-58,,true,,1997,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001058000,3180,Mixto,200,OK,Thread Group 1-59,,true,,2480,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001059000,2969,Mixto,200,OK,Thread Group 1-60,,true,,2910,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001060000,3193,Mixto,200,OK,Thread Group 1-61,,true,,1938,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001061000,3375,Mixto,500,OK,Thread Group 1-62,,false,Internal Server Error,2268,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001062000,3158,Mixto,200,OK,Thread Group 1-63,,true,,2636,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001063000,3276,Mixto,200,OK,Thread Group 1-64,,true,,1217,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001064000,3173,Mixto,200,OK,Thread Group 1-65,,true,,1342,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001065000,3040,Mixto,200,OK,Thread Group 1-66,,true,,2923,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001066000,3172,Mixto,500,OK,Thread Group 1-67,,false,Internal Server Error,1199,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001067000,2938,Mixto,200,OK,Thread Group 1-68,,true,,1597,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001068000,3222,Mixto,200,OK,Thread Group 1-69,,true,,1245,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001069000,2918,Mixto,200,OK,Thread Group 1-70,,true,,1788,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001070000,2963,Mixto,200,OK,Thread Group 1-71,,true,,1831,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001071000,3005,Mixto,200,OK,Thread Group 1-72,,true,,1029,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001072000,3223,Mixto,200,OK,Thread Group 1-73,,true,,1497,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001073000,3191,Mixto,200,OK,Thread Group 1-74,,true,,2773,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001074000,3159,Mixto,200,OK,Thread Group 1-75,,true,,1878,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001075000,3305,Mixto,200,OK,Thread Group 1-76,,true,,2372,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001076000,3078,Mixto,200,OK,Thread Group 1-77,,true,,2217,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001077000,2961,Mixto,200,OK,Thread Group 1-78,,true,,2595,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001078000,3211,Mixto,200,OK,Thread Group 1-79,,true,,1783,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001079000,3005,Mixto,200,OK,Thread Group 1-80,,true,,2277,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001080000,3336,Mixto,200,OK,Thread Group 1-81,,true,,1169,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001081000,3378,Mixto,500,OK,Thread Group 1-82,,false,Internal Server Error,2636,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001082000,3068,Mixto,200,OK,Thread Group 1-83,,true,,2485,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001083000,3217,Mixto,200,OK,Thread Group 1-84,,true,,2364,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001084000,3018,Mixto,200,OK,Thread Group 1-85,,true,,2532,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001085000,2981,Mixto,200,OK,Thread Group 1-86,,true,,2764,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001086000,3274,Mixto,200,OK,Thread Group 1-87,,true,,1485,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001087000,3231,Mixto,200,OK,Thread Group 1-88,,true,,1695,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001088000,2920,Mixto,200,OK,Thread Group 1-89,,true,,2406,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001089000,3087,Mixto,200,OK,Thread Group 1-90,,true,,2413,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001090000,3317,Mixto,200,OK,Thread Group 1-91,,true,,2179,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001091000,3330,Mixto,200,OK,Thread Group 1-92,,true,,1538,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001092000,3045,Mixto,200,OK,Thread Group 1-93,,true,,1093,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001093000,3356,Mixto,200,OK,Thread Group 1-94,,true,,2771,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001094000,3162,Mixto,200,OK,Thread Group 1-95,,true,,2842,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001095000,2948,Mixto,500,OK,Thread Group 1-96,,false,Internal Server Error,1587,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001096000,2929,Mixto,500,OK,Thread Group 1-97,,false,Internal Server Error,2352,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001097000,3339,Mixto,200,OK,Thread Group 1-98,,true,,2733,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001098000,3206,Mixto,200,OK,Thread Group 1-99,,true,,1360,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001099000,3301,Mixto,200,OK,Thread Group 1-100,,true,,2153,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001100000,2989,Mixto,200,OK,Thread Group 1-1,,true,,1979,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001101000,2965,Mixto,200,OK,Thread Group 1-2,,true,,2775,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001102000,2915,Mixto,200,OK,Thread Group 1-3,,true,,2919,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001103000,3313,Mixto,200,OK,Thread Group 1-4,,true,,1403,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001104000,2961,Mixto,200,OK,Thread Group 1-5,,true,,1231,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001105000,3039,Mixto,200,OK,Thread Group 1-6,,true,,1546,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001106000,3359,Mixto,200,OK,Thread Group 1-7,,true,,2802,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001107000,3177,Mixto,200,OK,Thread Group 1-8,,true,,2405,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001108000,3234,Mixto,200,OK,Thread Group 1-9,,true,,2219,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001109000,3099,Mixto,200,OK,Thread Group 1-10,,true,,1524,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001110000,3270,Mixto,200,OK,Thread Group 1-11,,true,,2543,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001111000,3128,Mixto,500,OK,Thread Group 1-12,,false,Internal Server Error,1664,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001112000,3082,Mixto,500,OK,Thread Group 1-13,,false,Internal Server Error,1436,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001113000,2965,Mixto,200,OK,Thread Group 1-14,,true,,2917,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001114000,2890,Mixto,200,OK,Thread Group 1-15,,true,,3060,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001115000,3060,Mixto,200,OK,Thread Group 1-16,,true,,1682,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001116000,2963,Mixto,200,OK,Thread Group 1-17,,true,,1748,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001117000,3056,Mixto,500,OK,Thread Group 1-18,,false,Internal Server Error,1544,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001118000,3184,Mixto,200,OK,Thread Group 1-19,,true,,2661,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001119000,3110,Mixto,200,OK,Thread Group 1-20,,true,,3018,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001120000,3274,Mixto,200,OK,Thread Group 1-21,,true,,2757,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001121000,3316,Mixto,200,OK,Thread Group 1-22,,true,,1672,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001122000,3011,Mixto,200,OK,Thread Group 1-23,,true,,2048,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001123000,3278,Mixto,500,OK,Thread Group 1-24,,false,Internal Server Error,2907,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001124000,3137,Mixto,200,OK,Thread Group 1-25,,true,,2663,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001125000,3142,Mixto,200,OK,Thread Group 1-26,,true,,1158,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001126000,3229,Mixto,200,OK,Thread Group 1-27,,true,,1080,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001127000,2941,Mixto,200,OK,Thread Group 1-28,,true,,2431,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001128000,3335,Mixto,200,OK,Thread Group 1-29,,true,,1104,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001129000,3161,Mixto,200,OK,Thread Group 1-30,,true,,1083,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001130000,3349,Mixto,200,OK,Thread Group 1-31,,true,,2984,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001131000,3089,Mixto,200,OK,Thread Group 1-32,,true,,1356,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001132000,3112,Mixto,200,OK,Thread Group 1-33,,true,,1765,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001133000,3232,Mixto,500,OK,Thread Group 1-34,,false,Internal Server Error,1780,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001134000,3022,Mixto,200,OK,Thread Group 1-35,,true,,1118,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001135000,3152,Mixto,200,OK,Thread Group 1-36,,true,,1177,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001136000,2969,Mixto,200,OK,Thread Group 1-37,,true,,2935,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001137000,3311,Mixto,500,OK,Thread Group 1-38,,false,Internal Server Error,1191,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001138000,3025,Mixto,500,OK,Thread Group 1-39,,false,Internal Server Error,1477,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001139000,3362,Mixto,200,OK,Thread Group 1-40,,true,,1899,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001140000,3058,Mixto,200,OK,Thread Group 1-41,,true,,1495,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001141000,3186,Mixto,200,OK,Thread Group 1-42,,true,,2029,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001142000,3121,Mixto,200,OK,Thread Group 1-43,,true,,2181,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001143000,2901,Mixto,500,OK,Thread Group 1-44,,false,Internal Server Error,1953,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001144000,3182,Mixto,200,OK,Thread Group 1-45,,true,,2652,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001145000,3005,Mixto,200,OK,Thread Group 1-46,,true,,2997,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001146000,3122,Mixto,200,OK,Thread Group 1-47,,true,,1042,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001147000,3343,Mixto,200,OK,Thread Group 1-48,,true,,2257,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001148000,3153,Mixto,500,OK,Thread Group 1-49,,false,Internal Server Error,2910,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001149000,2927,Mixto,200,OK,Thread Group 1-50,,true,,2368,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001150000,3151,Mixto,200,OK,Thread Group 1-51,,true,,1579,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001151000,3198,Mixto,200,OK,Thread Group 1-52,,true,,1525,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001152000,3277,Mixto,200,OK,Thread Group 1-53,,true,,1877,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001153000,3213,Mixto,500,OK,Thread Group 1-54,,false,Internal Server Error,2172,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001154000,3327,Mixto,200,OK,Thread Group 1-55,,true,,1284,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001155000,3302,Mixto,200,OK,Thread Group 1-56,,true,,1160,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001156000,3170,Mixto,200,OK,Thread Group 1-57,,true,,2311,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001157000,3377,Mixto,200,OK,Thread Group 1-58,,true,,2545,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001158000,3062,Mixto,200,OK,Thread Group 1-59,,true,,2360,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001159000,3353,Mixto,200,OK,Thread Group 1-60,,true,,1351,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001160000,3166,Mixto,200,OK,Thread Group 1-61,,true,,1149,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001161000,3069,Mixto,200,OK,Thread Group 1-62,,true,,2763,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001162000,3337,Mixto,200,OK,Thread Group 1-63,,true,,1653,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001163000,3032,Mixto,200,OK,Thread Group 1-64,,true,,1436,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001164000,3339,Mixto,200,OK,Thread Group 1-65,,true,,2284,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001165000,3292,Mixto,200,OK,Thread Group 1-66,,true,,3067,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001166000,3249,Mixto,200,OK,Thread Group 1-67,,true,,1028,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001167000,2912,Mixto,200,OK,Thread Group 1-68,,true,,2543,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001168000,3020,Mixto,200,OK,Thread Group 1-69,,true,,2589,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001169000,3198,Mixto,200,OK,Thread Group 1-70,,true,,1398,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001170000,3111,Mixto,200,OK,Thread Group 1-71,,true,,1315,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001171000,3145,Mixto,200,OK,Thread Group 1-72,,true,,2087,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001172000,3140,Mixto,200,OK,Thread Group 1-73,,true,,2073,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001173000,3251,Mixto,200,OK,Thread Group 1-74,,true,,2358,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001174000,3073,Mixto,200,OK,Thread Group 1-75,,true,,1464,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001175000,3224,Mixto,500,OK,Thread Group 1-76,,false,Internal Server Error,2538,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001176000,3034,Mixto,500,OK,Thread Group 1-77,,false,Internal Server Error,1654,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001177000,3042,Mixto,200,OK,Thread Group 1-78,,true,,1526,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001178000,3374,Mixto,200,OK,Thread Group 1-79,,true,,2372,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001179000,3281,Mixto,200,OK,Thread Group 1-80,,true,,2022,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001180000,2974,Mixto,200,OK,Thread Group 1-81,,true,,1479,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001181000,3272,Mixto,200,OK,Thread Group 1-82,,true,,1305,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001182000,3058,Mixto,200,OK,Thread Group 1-83,,true,,1489,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001183000,3345,Mixto,200,OK,Thread Group 1-84,,true,,1852,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001184000,3307,Mixto,200,OK,Thread Group 1-85,,true,,1468,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001185000,2917,Mixto,200,OK,Thread Group 1-86,,true,,1235,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001186000,3364,Mixto,200,OK,Thread Group 1-87,,true,,2381,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001187000,3320,Mixto,200,OK,Thread Group 1-88,,true,,2076,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001188000,2900,Mixto,200,OK,Thread Group 1-89,,true,,2424,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001189000,2903,Mixto,200,OK,Thread Group 1-90,,true,,2288,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001190000,2947,Mixto,200,OK,Thread Group 1-91,,true,,1450,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001191000,3368,Mixto,200,OK,Thread Group 1-92,,true,,2303,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001192000,2905,Mixto,200,OK,Thread Group 1-93,,true,,1944,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001193000,3045,Mixto,200,OK,Thread Group 1-94,,true,,3041,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001194000,3071,Mixto,200,OK,Thread Group 1-95,,true,,2165,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001195000,3181,Mixto,200,OK,Thread Group 1-96,,true,,2927,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001196000,3106,Mixto,200,OK,Thread Group 1-97,,true,,2283,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001197000,2961,Mixto,200,OK,Thread Group 1-98,,true,,1085,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001198000,3140,Mixto,500,OK,Thread Group 1-99,,false,Internal Server Error,1611,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001199000,3176,Mixto,200,OK,Thread Group 1-100,,true,,2715,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0
+1703001200000,3097,Mixto,200,OK,Thread Group 1-1,,true,,2172,256,100,100,http://api.mediplus.com/Mixto,,50,UTF-8,1,0,localhost,0

@@ -1,0 +1,16 @@
+Operacion,Metodo,Endpoint,Codigo,TiempoMs,Exitosa,Timestamp
+Obtener Todos los Reportes,GET,/products,200,650,true,2025-08-18T15:10:37.126616400
+Obtener Reportes con Límite,GET,/products?limit=10,200,223,true,2025-08-18T15:24:08.162713900
+Obtener Reporte por ID,GET,/products/1,200,445,true,2025-08-18T15:45:40.165771500
+Obtener Categorías,GET,/products/categories,200,276,true,2025-08-18T15:21:58.167264500
+Buscar Reportes,GET,/products/search?q=phone,200,158,true,2025-08-18T15:47:26.168274700
+Productos por Categoría,GET,/products/category/smartphones,200,365,true,2025-08-18T15:54:31.169292600
+Reporte No Encontrado,GET,/products/9999,404,504,false,2025-08-18T15:53:30.173350400
+Crear Nuevo Reporte,POST,/products/add,201,398,true,2025-08-18T15:41:07.175410800
+Crear Usuario,POST,/users/add,201,436,true,2025-08-18T15:55:35.176932100
+Crear Comentario Médico,POST,/comments/add,201,309,true,2025-08-18T15:13:21.180494400
+Crear Reporte Inválido,POST,/products/add,400,761,false,2025-08-18T15:38:38.183559300
+Actualizar Reporte,PUT,/products/1,200,260,true,2025-08-18T15:39:29.186607800
+Actualizar Usuario,PUT,/users/1,200,692,true,2025-08-18T15:37:11.188648
+Eliminar Reporte,DELETE,/products/1,200,302,true,2025-08-18T15:54:13.189669800
+Eliminar Comentario,DELETE,/comments/1,200,476,true,2025-08-18T15:13:23.190682300

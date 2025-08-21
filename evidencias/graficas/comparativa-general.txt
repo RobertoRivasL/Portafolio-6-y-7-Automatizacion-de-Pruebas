@@ -1,0 +1,20 @@
+📊 ANÁLISIS COMPARATIVO GENERAL
+================================================================================
+
+| ESCENARIO           | USUARIOS | TIEMPO (ms) | THROUGHPUT | ERROR % | NIVEL      |
+|---------------------|----------|-------------|------------|---------|------------|
+| GET Masivo          |       10 |         506 |        1,0 |     0,0 | Excelente  |
+| GET Masivo          |       50 |        1124 |        1,0 |     0,5 | Bueno      |
+| GET Masivo          |      100 |        2397 |        1,0 |    13,0 | Malo       |
+| GET+POST Combinado  |       10 |         580 |        1,0 |     0,0 | Excelente  |
+| GET+POST Combinado  |       50 |        1366 |        1,0 |     1,5 | Bueno      |
+| GET+POST Combinado  |      100 |        3142 |        1,0 |    12,0 | Malo       |
+| POST Masivo         |       10 |         644 |        1,0 |     0,0 | Excelente  |
+| POST Masivo         |       50 |        1497 |        1,0 |     3,5 | Bueno      |
+| POST Masivo         |      100 |        3714 |        1,0 |    12,5 | Malo       |
+
+📈 RESUMEN EJECUTIVO:
+- Mejor rendimiento: GET Masivo con 10 usuarios (506ms)
+- Peor rendimiento: POST Masivo con 100 usuarios (3714ms)
+- Escenario más estable: GET+POST Combinado
+- Usuarios críticos: >50 usuarios en todos los escenarios

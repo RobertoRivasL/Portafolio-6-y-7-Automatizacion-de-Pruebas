@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-19_11-41-50",
+    "fecha": "19/08/2025 11:41:51",
+    "totalPruebas": 9
+  },
+  "metricas": [
+    {
+      "escenario": "GET Masivo",
+      "usuarios": 10,
+      "tiempoPromedio": 218.20509440262947,
+      "throughput": 50.0,
+      "tasaError": 0.5,
+      "nivel": "Excelente"
+    },
+    {
+      "escenario": "GET Masivo",
+      "usuarios": 50,
+      "tiempoPromedio": 688.1076065261623,
+      "throughput": 59.523809523809526,
+      "tasaError": 2.0,
+      "nivel": "Bueno"
+    },
+    {
+      "escenario": "GET Masivo",
+      "usuarios": 100,
+      "tiempoPromedio": 1493.7634894886335,
+      "throughput": 60.97560975609757,
+      "tasaError": 8.0,
+      "nivel": "Regular"
+    },
+    {
+      "escenario": "POST Masivo",
+      "usuarios": 10,
+      "tiempoPromedio": 292.78544554817853,
+      "throughput": 28.571428571428573,
+      "tasaError": 0.5,
+      "nivel": "Excelente"
+    },
+    {
+      "escenario": "POST Masivo",
+      "usuarios": 50,
+      "tiempoPromedio": 1392.8443530858478,
+      "throughput": 34.01360544217687,
+      "tasaError": 2.0,
+      "nivel": "Regular"
+    },
+    {
+      "escenario": "POST Masivo",
+      "usuarios": 100,
+      "tiempoPromedio": 3088.6087730567797,
+      "throughput": 34.8432055749129,
+      "tasaError": 8.0,
+      "nivel": "Malo"
+    },
+    {
+      "escenario": "GET+POST Combinado",
+      "usuarios": 10,
+      "tiempoPromedio": 306.1191956669039,
+      "throughput": 36.36363636363637,
+      "tasaError": 0.5,
+      "nivel": "Excelente"
+    },
+    {
+      "escenario": "GET+POST Combinado",
+      "usuarios": 50,
+      "tiempoPromedio": 994.204710836095,
+      "throughput": 43.29004329004329,
+      "tasaError": 2.0,
+      "nivel": "Bueno"
+    },
+    {
+      "escenario": "GET+POST Combinado",
+      "usuarios": 100,
+      "tiempoPromedio": 2480.4153754924137,
+      "throughput": 44.34589800443459,
+      "tasaError": 8.0,
+      "nivel": "Malo"
+    }
+  ]
+}

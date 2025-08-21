@@ -1,0 +1,27 @@
+================================================================================
+📊 EVIDENCIAS GENERALES DEL SISTEMA - API MEDIPLUS
+🕐 Fecha de ejecución: 20/08/2025 14:17:21
+🏷️ Timestamp: 2025-08-20_14-17-21
+👥 Autores: Antonio B. Arriagada LL., Dante Escalona Bustos, Roberto Rivas Lopez
+================================================================================
+
+=== INFORMACIÓN DEL SISTEMA ===
+Java Version: 21.0.8
+OS: Windows 11 10.0
+Directorio de trabajo: D:\Doc_HP_RRL\RRL\Sence\Iseg Spa\Modulo 7\Ejercicios\Portafolio 7\P6yP7\02\pruebas-api-mediplus
+Usuario: uman_
+
+=== ESTRUCTURA DEL PROYECTO ===
+Directorios principales:
+  ✅ src/ (existe)
+  ✅ target/ (existe)
+  ✅ resultados/ (existe)
+  ✅ evidencias/ (existe)
+  ✅ jmeter/ (existe)
+
+
+================================================================================
+🎯 RESULTADO FINAL: EXITOSO ✅
+📋 Código de salida: 0
+⏰ Finalizado: 20/08/2025 14:17:21
+================================================================================
