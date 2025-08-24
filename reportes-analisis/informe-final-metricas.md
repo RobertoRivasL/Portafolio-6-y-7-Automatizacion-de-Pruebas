@@ -1,7 +1,7 @@
 # Informe Final - Análisis de Métricas de Rendimiento
 
 **Proyecto**: Pruebas Automatizadas API MediPlus  
-**Fecha**: Wed Aug 20 23:13:12 CLT 2025  
+**Fecha**: Sun Aug 24 17:55:35 CLT 2025  
 **Autores**: Antonio B. Arriagada LL., Dante Escalona Bustos, Roberto Rivas Lopez  
 
 ## 📊 Resumen Ejecutivo

@@ -1,18 +1,339 @@
-# Maven
+# =============================================================================
+# .gitignore para Proyecto MediPlus - Pruebas Automatizadas APIs REST
+# Autores: Antonio B. Arriagada LL., Dante Escalona Bustos, Roberto Rivas Lopez
+# =============================================================================
+
+# =============================================================================
+# JAVA - Archivos compilados y empaquetados
+# =============================================================================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos de empaquetado específicos de Java
+hs_err_pid*
+replay_pid*
+
+# =============================================================================
+# MAVEN - Carpetas y archivos de build
+# =============================================================================
 target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-# IDE
+# =============================================================================
+# IDE - IntelliJ IDEA
+# =============================================================================
 .idea/
+*.iws
 *.iml
-.vscode/
-.eclipse
+*.ipr
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
 
-# Logs
+# =============================================================================
+# IDE - Eclipse
+# =============================================================================
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+.apt_generated/
+.apt_generated_test/
+
+# =============================================================================
+# IDE - Visual Studio Code
+# =============================================================================
+.vscode/
+*.code-workspace
+.history/
+
+# =============================================================================
+# IDE - NetBeans
+# =============================================================================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# =============================================================================
+# SISTEMA OPERATIVO - Windows
+# =============================================================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# =============================================================================
+# SISTEMA OPERATIVO - macOS
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# =============================================================================
+# SISTEMA OPERATIVO - Linux
+# =============================================================================
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# JMETER - Archivos de resultados y reportes
+# =============================================================================
+# Resultados JTL (archivos grandes de resultados)
+*.jtl
+resultados_jmeter/
+jmeter_resultados/
+test_results/
+
+# Reportes HTML generados por JMeter
+reportes_html/
+jmeter_reports/
+html_reports/
+dashboard_reports/
+
+# Logs de JMeter
+jmeter.log
+jmeter-*.log
+logs_jmeter/
+
+# Archivos temporales de JMeter
+*.jmeter
+jmeter.save.saveservice.output_format=xml
+
+# Carpetas de reportes específicas del proyecto
+evidencias/reportes/
+reportes/analisis-metricas-*
+reportes/REPORTE-EJECUTIVO-FINAL-*
+
+# =============================================================================
+# PRUEBAS - Archivos de resultados y evidencias
+# =============================================================================
+# Capturas de pantalla de evidencias
+capturas/
+screenshots/
+evidencias/
+test_evidences/
+
+# Archivos de logs de pruebas
+test_logs/
+logs_pruebas/
 *.log
 
-# OS
-.DS_Store
-Thumbs.db
+# Reportes de pruebas generados
+surefire-reports/
+failsafe-reports/
+test-output/
+reports/
+allure-results/
+allure-report/
+
+# Archivos temporales de pruebas
+temp_test_files/
+*.tmp
+
+# =============================================================================
+# DATOS SENSIBLES Y CONFIGURACIONES
+# =============================================================================
+# Configuraciones locales
+application-local.properties
+application-dev.properties
+config-local.yaml
+
+# Credenciales y tokens (por seguridad)
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.properties
+credentials.json
+api_keys.properties
+
+# Variables de entorno locales
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# =============================================================================
+# BASES DE DATOS Y CACHE
+# =============================================================================
+# H2 Database (si se usa para pruebas)
+*.db
+*.h2.db
+*.trace.db
+*.lock.db
+
+# SQLite
+*.sqlite
+*.sqlite3
+
+# Cache de dependencias
+.cache/
+cache/
+
+# =============================================================================
+# ARCHIVOS DEL PROYECTO ESPECÍFICOS
+# =============================================================================
+# Archivos de configuración específicos del equipo
+config/local/
+configuraciones_personales/
+
+# Archivos de datos de prueba grandes
+datos_prueba_grandes/
+test_data_large/
+
+# Backups y archivos temporales del proyecto
+backup/
+backups/
+temp/
+temporal/
+
+# Archivos de análisis y métricas generados
+analisis_completo_*.txt
+metricas_generadas/
+estadisticas_*.json
+
+# =============================================================================
+# HERRAMIENTAS DE DESARROLLO
+# =============================================================================
+# SonarQube
+.sonar/
+.scannerwork/
+
+# SpotBugs
+.spotbugs/
+
+# JaCoCo
+jacoco.exec
+*.exec
+
+# Gradle (por si se cambia a futuro)
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# =============================================================================
+# ARCHIVOS DE CONFIGURACIÓN LOCAL
+# =============================================================================
+# Configuraciones locales del IDE
+.vscode/settings.json
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+.idea/shelf
+
+# =============================================================================
+# ARCHIVOS TEMPORALES Y DE SISTEMA
+# =============================================================================
+# Archivos temporales generales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Archivos de lock
+*.lock
+
+# =============================================================================
+# DOCUMENTACIÓN GENERADA
+# =============================================================================
+# JavaDoc generado
+javadoc/
+docs/generated/
+
+# =============================================================================
+# EXCLUSIONES ESPECÍFICAS DEL PROYECTO MEDIPLUS
+# =============================================================================
+# Carpetas de resultados específicas
+tests-procesados-main-*.md
+evidencias/REPORTE-EJECUTIVO-FINAL-*.md
+
+# Archivos de configuración JMeter específicos (mantener templates)
+!jmeter_plans_dummyjson/*.jmx
+!configuraciones_jmeter/templates/
+
+# =============================================================================
+# MANTENER ARCHIVOS IMPORTANTES
+# =============================================================================
+# Asegurar que ciertos archivos importantes no se ignoren
+!pom.xml
+!README.md
+!AnalisisEjecutivo.md
+!DocumentacionTecnica.md
+!EvidenciasVisuales.md
+!ReporteEvidenciasGraficas.md
+!*.png
+!src/
+!jmeter_plans_mediplus/
+!configuraciones/
+!.gitignore
+!LICENSE
+
+# =============================================================================
+# FIN DEL ARCHIVO .gitignore
+# =============================================================================

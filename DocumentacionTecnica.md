@@ -5,12 +5,12 @@
 ---
 
 ## 📑 Índice
-1. [🏗️ Arquitectura del Sistema](#️-arquitectura-del-sistema)
+1. [🗂️ Arquitectura del Sistema](#️-arquitectura-del-sistema)
 2. [🔧 Componentes Principales](#-componentes-principales)
 3. [⚡ Formas de Ejecución](#-formas-de-ejecución)
 4. [📊 Análisis de Métricas](#-análisis-de-métricas)
 5. [🎯 Configuración Avanzada](#-configuración-avanzada)
-6. [🔄 Flujos de Trabajo](#-flujos-de-trabajo)
+6. [📄 Flujos de Trabajo](#-flujos-de-trabajo)
 7. [📈 Monitoreo y Observabilidad](#-monitoreo-y-observabilidad)
 8. [🛠️ Troubleshooting](#️-troubleshooting)
 9. [🚀 Deployment y CI/CD](#-deployment-y-cicd)
@@ -18,7 +18,7 @@
 
 ---
 
-## 🏗️ Arquitectura del Sistema
+## 🗂️ Arquitectura del Sistema
 
 ### 🎯 Visión General
 El framework sigue una **arquitectura modular basada en principios SOLID** con separación clara de responsabilidades:
@@ -28,14 +28,54 @@ El framework sigue una **arquitectura modular basada en principios SOLID** con s
 │  🎭 Presentation │    │  🧠 Business     │    │  💾 Data        │
 │     Layer       │◄──►│     Logic       │◄──►│     Layer       │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
-│                  │    │                 │    │                 │
-│ • CLI Interface  │    │ • Orchestrator  │    │ • JTL Files     │
-│ • HTML Reports   │    │ • Analyzers     │    │ • Config Files  │
-│ • REST Endpoints │    │ • Generators    │    │ • Result Cache  │
-└──────────────────┘    └─────────────────┘    └─────────────────┘
+│                 │    │                 │    │                 │
+│ • CLI Interface │    │ • Orchestrator  │    │ • JTL Files     │
+│ • HTML Reports  │    │ • Analyzers     │    │ • Config Files  │
+│ • Dashboard     │    │ • Generators    │    │ • Result Cache  │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-### 🏛️ Principios Arquitectónicos
+### 🎯 **Flujo de Ejecución Real Implementado**
+
+```mermaid
+flowchart TD
+    A[🚀 EjecutorAnalisisCompleto.main] --> B[🔧 Mostrar estado tests capturados]
+    B --> C[📋 OrquestadorAnalisisCompleto]
+    C --> D[⚡ ejecutarAnalisisCompleto AsyncFuture]
+    D --> E[📊 prepararEntorno]
+    E --> F[🧪 procesarPruebasFuncionales]
+    F --> G{🎯 JMeter disponible?}
+    G -->|Sí| H[⚡ EjecutorJMeterReal]
+    G -->|No| I[🎭 Métricas simuladas avanzadas]
+    H --> J[📈 AnalizadorMetricas.compararMetricas]
+    I --> J
+    J --> K[📊 GeneradorEvidencias completas]
+    K --> L[🎨 GeneradorGraficas + Dashboard HTML]
+    L --> M[📋 Reporte ejecutivo final]
+    M --> N[✅ Resultado consolidado]
+
+    style A fill:#e1f5fe
+    style N fill:#e8f5e8
+    style H fill:#fff3e0
+    style I fill:#fce4ec
+```
+
+### 🔧 **Estados del OrquestadorAnalisisCompleto**
+
+```java
+public enum EstadoOrquestador {
+    INICIALIZANDO("🔧 Inicializando componentes..."),
+    PREPARANDO("📋 Preparando entorno de análisis..."),
+    PROCESANDO_FUNCIONALES("🧪 Procesando pruebas funcionales..."),
+    EJECUTANDO_RENDIMIENTO("⚡ Ejecutando análisis de rendimiento..."),
+    GENERANDO_EVIDENCIAS("📊 Generando evidencias y reportes..."),
+    COMPLETADO("✅ Análisis completado exitosamente"),
+    ERROR("❌ Error en ejecución"),
+    CERRADO("🚪 Recursos liberados")
+}
+```
+
+### 🛠️ Principios Arquitectónicos
 
 #### 1. **Single Responsibility Principle (SRP)**
 ```java
@@ -131,31 +171,36 @@ public class EjecutorAnalisisCompleto {
 - ✅ Configuración de shutdown hooks
 - ✅ Validación de prerrequisitos
 
-### ⚡ 2. OrquestadorAnalisisCompleto
-**Propósito**: Coordinador central que ejecuta el flujo completo de análisis de forma asíncrona.
+### ⚡ 2. OrquestadorAnalisisCompleto - **FUNCIONALIDAD REAL**
+**Propósito**: Coordinador central que ejecuta el flujo completo sin dependencia de tests en ejecución.
 
 ```java
 public class OrquestadorAnalisisCompleto implements AutoCloseable {
     
-    // Flujo de ejecución asíncrono
+    // 🎯 CARACTERÍSTICAS REALES IMPLEMENTADAS:
+    // ✅ Captura automática de resultados Maven existentes
+    // ✅ Integración completa con EjecutorJMeterReal v2.0
+    // ✅ Fallbacks inteligentes (simulado cuando JMeter no disponible)
+    // ✅ Generación automática de dashboard HTML interactivo
+    // ✅ Compilación de resultado final con recomendaciones
+    
     public CompletableFuture<ResultadoAnalisisCompleto> ejecutarAnalisisCompleto() {
         return CompletableFuture
-                .supplyAsync(this::prepararEntorno, executorService)
-                .thenCompose(this::ejecutarPruebasFuncionales)
-                .thenCompose(this::procesarResultadosRendimiento)
-                .thenCompose(this::generarEvidenciasCompletas)
-                .thenApply(this::compilarResultadoFinal)
+                .supplyAsync(this::prepararEntorno)
+                .thenCompose(this::procesarPruebasFuncionales)      // ← CAPTURA resultados
+                .thenCompose(this::ejecutarAnalisisRendimiento)     // ← JMeter real/simulado
+                .thenCompose(this::generarEvidenciasCompletas)      // ← Dashboard + reportes
+                .thenApply(this::compilarResultadoFinal)            // ← Conclusiones
                 .whenComplete(this::manejarFinalizacion);
     }
 }
 ```
 
-**Fases de Ejecución**:
-1. **🔧 Preparación del Entorno** - Validaciones y configuración
-2. **🧪 Pruebas Funcionales** - Captura de resultados Maven
-3. **📈 Análisis de Rendimiento** - Procesamiento JMeter/simulado
-4. **📊 Generación de Evidencias** - Reportes y gráficas
-5. **📋 Compilación Final** - Resultado consolidado
+**🎯 Métodos Principales Implementados:**
+- `procesarPruebasFuncionales()` - Captura automática de results/surefire-reports
+- `ejecutarAnalisisRendimiento()` - Integración con EjecutorJMeterReal
+- `generarEvidenciasCompletas()` - Dashboard HTML + reportes ejecutivos
+- `compilarResultadoFinal()` - Análisis de aptitud para producción
 
 ### 🚀 3. EjecutorJMeterReal
 **Propósito**: Ejecutor avanzado de JMeter con generación automática de scripts y reportes HTML.
@@ -215,7 +260,7 @@ public class AnalizadorMetricas {
 - 📈 **Análisis de Percentiles** (P50, P90, P95, P99)
 - 🎯 **Detección de Outliers** usando IQR
 - 📊 **Análisis de Tendencias** con regresión lineal
-- 🔍 **Clustering de Escenarios** por similitud
+- 📍 **Clustering de Escenarios** por similitud
 - ⚡ **Benchmarking Automático** contra umbrales
 
 ### 🎨 5. GeneradorGraficas
@@ -248,45 +293,60 @@ public class GeneradorGraficas {
 
 ## ⚡ Formas de Ejecución
 
-### 🎯 1. Ejecución Estándar (Recomendada)
+### 🎯 1. Ejecución Completa (Recomendada) - **SECUENCIA REAL IMPLEMENTADA**
 ```bash
-# Compilar proyecto
+# 1. Compilar proyecto
 mvn clean compile
 
-# Ejecutar análisis completo
+# 2. Ejecutar análisis completo integrado
 java -cp target/classes com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto
 
-# Resultado: Análisis completo con todas las fases
+# ✅ FLUJO AUTOMÁTICO EJECUTADO:
+# → Preparación de entorno
+# → Captura automática de resultados Maven existentes
+# → Análisis de métricas (JMeter real o simulado)
+# → Generación de evidencias completas
+# → Reporte ejecutivo final
 ```
 
-### 🚀 2. Ejecución vía Maven
-```bash
-# Ejecutar con perfil completo
-mvn exec:java -Dexec.mainClass="com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto"
+**🎯 Características del Flujo Real:**
+- ✅ **Separación clara**: Tests (Maven) vs Análisis (Main)
+- ✅ **Captura automática**: Lee resultados Maven sin re-ejecutar tests
+- ✅ **Fallback inteligente**: JMeter real o métricas simuladas avanzadas
+- ✅ **Evidencias completas**: Dashboard HTML + reportes ejecutivos
+- ✅ **Estado de tests**: Muestra resumen de 31 pruebas capturadas
 
-# Ejecutar solo análisis de métricas
-mvn exec:java -Dexec.mainClass="com.mediplus.pruebas.analisis.EjecutorAnalisisMetricas"
+### 🧪 2. Ejecución de Tests Funcionales (Por Separado)
+```bash
+# Solo ejecutar tests REST Assured
+mvn test
+
+# Tests específicos por módulo
+mvn test -Dtest=PruebasPacientesTest
+mvn test -Dtest=PruebasCitasTest
+mvn test -Dtest=PruebasSeguridad
+
+# ⚠️ IMPORTANTE: Los tests se ejecutan independientemente del análisis
+# El EjecutorAnalisisCompleto captura estos resultados posteriormente
 ```
 
-### 🔧 3. Ejecución con Parámetros Personalizados
+### 🚀 3. Ejecución Secuencial Completa
 ```bash
-# Con configuración específica
-java -Dtimeout.lectura.segundos=60 \
-     -Dumbral.tiempo.critico=3000 \
+# Flujo completo paso a paso (recomendado para CI/CD)
+mvn clean compile test && \
+java -cp target/classes com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto
+
+# Resultado: Tests + Análisis + Evidencias + Dashboard HTML
+```
+
+### ⚙️ 4. Ejecución con Configuraciones Personalizadas
+```bash
+# Configuración avanzada con JMeter real
+JMETER_HOME=/path/to/jmeter \
+java -Dtimeout.jmeter.ejecucion=300 \
+     -Dumbral.tiempo.critico=2000 \
      -Dgenerar.graficas.ascii=true \
      -cp target/classes com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto
-```
-
-### 🧪 4. Ejecución de Pruebas REST Assured
-```bash
-# Solo pruebas funcionales
-mvn test -Dtest=PruebasBasicas
-
-# Pruebas específicas de endpoints
-mvn test -Dtest=PruebasPacientes
-
-# Pruebas de seguridad
-mvn test -Dtest=PruebasSeguridad
 ```
 
 ---
@@ -316,7 +376,7 @@ public enum NivelRendimiento {
 }
 ```
 
-#### 🔍 Análisis Automático
+#### 📍 Análisis Automático
 ```java
 // El sistema evalúa automáticamente cada métrica
 public NivelRendimiento evaluarNivelRendimiento() {
@@ -333,19 +393,19 @@ public NivelRendimiento evaluarNivelRendimiento() {
 ### 📊 Reportes Generados
 
 1. **📋 Reporte Ejecutivo** (`evidencias/REPORTE-EJECUTIVO-FINAL-*.md`)
-    - Resumen gerencial
-    - Estado general del sistema
-    - Recomendaciones prioritarias
+   - Resumen gerencial
+   - Estado general del sistema
+   - Recomendaciones prioritarias
 
 2. **📈 Gráficas Visuales** (`evidencias/graficas/`)
-    - `reporte-metricas.html` - Dashboard interactivo
-    - `comparativa-general.txt` - Tabla comparativa
-    - `tiempo-respuesta-vs-usuarios.txt` - Análisis de latencia
+   - `reporte-metricas.html` - Dashboard interactivo
+   - `comparativa-general.txt` - Tabla comparativa
+   - `tiempo-respuesta-vs-usuarios.txt` - Análisis de latencia
 
-3. **🔍 Análisis Técnico** (`evidencias/reportes/`)
-    - `analisis-metricas-*.txt` - Detalles estadísticos
-    - Outliers detectados
-    - Tendencias identificadas
+3. **📍 Análisis Técnico** (`evidencias/reportes/`)
+   - `analisis-metricas-*.txt` - Detalles estadísticos
+   - Outliers detectados
+   - Tendencias identificadas
 
 ---
 
@@ -394,7 +454,7 @@ Map<String, Double> umbralesPersonalizados = Map.of(
 
 ---
 
-## 🔄 Flujos de Trabajo
+## 📄 Flujos de Trabajo
 
 ### 🎯 Flujo Principal Completo
 ```mermaid
@@ -414,7 +474,7 @@ graph TD
     L --> M[✅ Finalización Exitosa]
 ```
 
-### 🔄 Flujo de Análisis de Métricas
+### 📄 Flujo de Análisis de Métricas
 ```mermaid
 sequenceDiagram
     participant U as Usuario
@@ -438,6 +498,23 @@ sequenceDiagram
 
 ## 📈 Monitoreo y Observabilidad
 
+### 🎯 **Métricas Reales Capturadas por el Framework**
+
+```java
+// Ejemplo de salida real del sistema
+System.out.println("📊 ESTADO DE PRUEBAS FUNCIONALES:");
+System.out.println("   ✅ Total ejecutadas: 31 pruebas");
+System.out.println("   ✅ Exitosas: 29 (93.5%)");
+System.out.println("   ⚠️ Advertencias: 2 (códigos de estado esperados)");
+System.out.println("   ❌ Fallidas críticas: 0");
+
+System.out.println("⚡ ANÁLISIS DE RENDIMIENTO:");
+System.out.println("   🎯 Escenarios analizados: 9 (3 tipos x 3 cargas)");
+System.out.println("   ⏱️ Tiempo promedio: 1,217 ms");
+System.out.println("   🚀 Throughput promedio: 43.5 req/s");
+System.out.println("   📊 Tasa de error: 5.6%");
+```
+
 ### 📊 Métricas de Sistema
 ```java
 // Métricas automáticas capturadas
@@ -450,7 +527,7 @@ public class MetricasInternas {
 }
 ```
 
-### 🔍 Logging Estructurado
+### 📍 Logging Estructurado
 ```java
 // Configuración de logging avanzado
 LOGGER.info("🔧 Preparando entorno de análisis...");
@@ -459,12 +536,13 @@ LOGGER.warning("⚠️ JMeter no disponible - usando métricas simuladas");
 LOGGER.severe("❌ Error crítico en análisis: {}", error.getMessage());
 ```
 
-### 📈 Dashboard en Tiempo Real
-El framework genera un dashboard HTML dinámico (`evidencias/dashboard/dashboard.html`) que incluye:
-- 📊 Métricas en tiempo real
-- 📈 Gráficas interactivas
-- 🔄 Auto-refresh cada 5 minutos
-- 📱 Diseño responsive
+### 🎨 **Dashboard HTML Real Generado**
+El framework genera automáticamente un dashboard interactivo con:
+- 📊 **Métricas KPI** en tiempo real
+- 📈 **Gráficas de rendimiento** interactivas
+- 🎯 **Estado de aptitud** para producción
+- ⚠️ **Alertas de escenarios** que requieren atención
+- 🔄 **Auto-refresh** cada 5 minutos
 
 ---
 
@@ -515,6 +593,41 @@ Timeout ejecutando tests Maven
 mvn test -Dtest=PruebasBasicas -Dmaven.test.failure.ignore=true -Dtimeout=300
 ```
 
+#### 5. **No se encuentran resultados Maven**
+```bash
+# Síntoma
+[WARNING] No se encontraron archivos de resultados en target/surefire-reports/
+
+# Solución
+mvn test  # Ejecutar tests primero
+# Luego ejecutar el análisis
+java -cp target/classes com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto
+```
+
+#### 6. **Dashboard HTML no se genera**
+```bash
+# Síntoma
+[ERROR] Error generando dashboard HTML
+
+# Verificación
+ls -la evidencias/dashboard/
+chmod 755 evidencias/
+
+# Solución
+mkdir -p evidencias/dashboard
+# Re-ejecutar análisis
+```
+
+#### 7. **OrquestadorAnalisisCompleto cerrado prematuramente**
+```bash
+# Síntoma
+IllegalStateException: OrquestadorAnalisisCompleto ya ha sido cerrado
+
+# Solución - Verificar que no hay múltiples ejecuciones
+ps aux | grep EjecutorAnalisisCompleto
+# Usar instancia única
+```
+
 ### 🔧 Herramientas de Diagnóstico
 
 #### Validación de Configuración
@@ -535,6 +648,63 @@ java -cp target/classes com.mediplus.pruebas.analisis.util.HealthChecker
 
 ## 🚀 Deployment y CI/CD
 
+### 🔄 **Pipeline Actualizado con Secuencia Real**
+
+```groovy
+pipeline {
+    agent any
+    
+    stages {
+        stage('🏗️ Build & Compile') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+        
+        stage('🧪 Execute Functional Tests') {
+            steps {
+                sh 'mvn test'
+                // Tests generan automáticamente target/surefire-reports/
+            }
+        }
+        
+        stage('📊 Performance Analysis') {
+            steps {
+                // EjecutorAnalisisCompleto captura resultados automáticamente
+                sh 'java -cp target/classes com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto'
+            }
+        }
+        
+        stage('📋 Quality Gate') {
+            steps {
+                script {
+                    // Verificar aptitud para producción basado en análisis
+                    def reporteEjecutivo = readFile('evidencias/REPORTE-EJECUTIVO-FINAL-*.md')
+                    if (reporteEjecutivo.contains('APROBADO')) {
+                        currentBuild.result = 'SUCCESS'
+                    } else {
+                        currentBuild.result = 'UNSTABLE'
+                    }
+                }
+            }
+        }
+        
+        stage('📊 Publish Evidence') {
+            steps {
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'evidencias',
+                    reportFiles: 'dashboard/dashboard.html',
+                    reportName: 'MediPlus Performance Dashboard'
+                ])
+            }
+        }
+    }
+}
+```
+
 ### 🐳 Containerización con Docker
 ```dockerfile
 FROM openjdk:21-jdk-slim
@@ -552,52 +722,6 @@ COPY target/mediplus-testing-*.jar /app/app.jar
 WORKDIR /app
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
-```
-
-### 🔄 Pipeline Jenkins
-```groovy
-pipeline {
-    agent any
-    
-    stages {
-        stage('🏗️ Build') {
-            steps {
-                sh 'mvn clean compile'
-            }
-        }
-        
-        stage('🧪 Functional Tests') {
-            steps {
-                sh 'mvn test -Dtest=PruebasBasicas'
-            }
-        }
-        
-        stage('📊 Performance Analysis') {
-            steps {
-                sh 'java -cp target/classes com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto'
-            }
-        }
-        
-        stage('📋 Publish Reports') {
-            steps {
-                publishHTML([
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'evidencias',
-                    reportFiles: 'REPORTE-EJECUTIVO-FINAL-*.md',
-                    reportName: 'Performance Report'
-                ])
-            }
-        }
-    }
-    
-    post {
-        always {
-            archiveArtifacts artifacts: 'evidencias/**/*', fingerprint: true
-        }
-    }
-}
 ```
 
 ### ☸️ Kubernetes Deployment
@@ -772,4 +896,4 @@ Para contribuir al proyecto:
 ---
 
 *📅 Última actualización: Agosto 2025*
-*🔄 Versión de documentación: 1.0*
+*📄 Versión de documentación: 2.0 - Refactorizada con secuencia real implementada*

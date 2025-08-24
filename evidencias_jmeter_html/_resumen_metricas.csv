@@ -1,0 +1,10 @@
+Escenario,Usuarios,Duracion,TiempoPromedio,P90,P95,Throughput,TasaError,Estado
+01_get_masivo_dummyjson_10_usuarios,10,60,0,0,0,0,100,FALLIDO
+01_get_masivo_dummyjson_50_usuarios,50,60,0,0,0,0,100,FALLIDO
+01_get_masivo_dummyjson_100_usuarios,100,60,0,0,0,0,100,FALLIDO
+02_write_ops_dummyjson_10_usuarios,10,60,0,0,0,0,100,FALLIDO
+02_write_ops_dummyjson_50_usuarios,50,60,0,0,0,0,100,FALLIDO
+02_write_ops_dummyjson_100_usuarios,100,60,0,0,0,0,100,FALLIDO
+03_mix_dummyjson_10_usuarios,10,60,0,0,0,0,100,FALLIDO
+03_mix_dummyjson_50_usuarios,50,60,0,0,0,0,100,FALLIDO
+03_mix_dummyjson_100_usuarios,100,60,0,0,0,0,100,FALLIDO

@@ -1,7 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1755576873131,879,GET Verificación,200,OK,Grupo Verificación 1-2,text,true,,490,116,2,2,https://httpbin.org/get,872,0,727
-1755576872507,1657,GET Verificación,200,OK,Grupo Verificación 1-1,text,true,,490,116,2,2,https://httpbin.org/get,1657,0,1350
-1755576874166,224,GET Verificación,200,OK,Grupo Verificación 1-1,text,true,,490,116,2,2,https://httpbin.org/get,224,0,0
-1755576874390,239,GET Verificación,200,OK,Grupo Verificación 1-1,text,true,,490,116,2,2,https://httpbin.org/get,239,0,0
-1755576874017,711,GET Verificación,200,OK,Grupo Verificación 1-2,text,true,,490,116,1,1,https://httpbin.org/get,711,0,0
-1755576874728,164,GET Verificación,200,OK,Grupo Verificación 1-2,text,true,,490,116,1,1,https://httpbin.org/get,164,0,0

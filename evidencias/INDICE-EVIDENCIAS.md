@@ -1,7 +1,7 @@
 # 📑 ÍNDICE DE EVIDENCIAS - PROYECTO MEDIPLUS
 
-**Generado:** 20/08/2025 23:25:37
-**Timestamp:** 2025-08-20_23-25-36
+**Generado:** 24/08/2025 17:58:48
+**Timestamp:** 2025-08-24_17-58-46
 **Framework:** Automatización de Pruebas REST MediPlus v2.0
 
 ## 🎯 RESUMEN EJECUTIVO
@@ -20,18 +20,18 @@ El framework ha ejecutado pruebas funcionales, análisis de rendimiento y genera
 
 ### 📁 evidencias
 
-- `resumen-ejecucion-2025-08-20_23-25-36.md` 
+- `resumen-ejecucion-2025-08-24_17-58-46.md` 
 
 ### 📋 reportes
 
-- `analisis-metricas-2025-08-20_23-25-36.txt` 
+- `analisis-metricas-2025-08-24_17-58-46.txt` 
 
 ## 🔗 ENLACES RÁPIDOS
 
 ### 📊 Reportes Principales
 - [Reporte HTML de Métricas](graficas/reporte-metricas.html) - Dashboard interactivo
-- [Reporte Ejecutivo Final](REPORTE-EJECUTIVO-FINAL-2025-08-20_23-25-36.md) - Resumen gerencial
-- [Análisis Técnico Detallado](reportes/analisis-metricas-2025-08-20_23-25-36.txt) - Detalles técnicos
+- [Reporte Ejecutivo Final](REPORTE-EJECUTIVO-FINAL-2025-08-24_17-58-46.md) - Resumen gerencial
+- [Análisis Técnico Detallado](reportes/analisis-metricas-2025-08-24_17-58-46.txt) - Detalles técnicos
 
 ### 📈 Gráficas y Visualizaciones
 - [Comparativa General](graficas/comparativa-general.txt) - Resumen de todos los escenarios

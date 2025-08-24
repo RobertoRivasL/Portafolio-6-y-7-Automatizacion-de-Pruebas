@@ -12,7 +12,7 @@
     <packaging>jar</packaging>
 
     <name>MediPlus API - Pruebas Automatizadas</name>
-    <description>Automatización de Pruebas REST con Framework Integrado</description>
+    <description>Automatización de Pruebas REST con Framework Integrado + JMeter</description>
 
     <developers>
         <developer>
@@ -34,24 +34,41 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 
         <!-- Versiones principales -->
         <junit.version>5.10.0</junit.version>
         <junit.platform.version>1.10.0</junit.platform.version>
         <rest-assured.version>5.3.2</rest-assured.version>
-        <jackson.version>2.15.3</jackson.version>
+        <jackson.version>2.17.1</jackson.version>
         <slf4j.version>2.0.9</slf4j.version>
         <logback.version>1.4.14</logback.version>
 
         <!-- Plugins -->
         <maven-compiler.version>3.11.0</maven-compiler.version>
-        <maven-surefire.version>3.1.2</maven-surefire.version>
+        <maven-surefire.version>3.2.5</maven-surefire.version>
         <maven-jar.version>3.3.0</maven-jar.version>
-        <maven-assembly.version>3.6.0</maven-assembly.version>
+        <maven-shade.version>3.5.0</maven-shade.version>
+        <exec.version>3.3.0</exec.version>
+        <jacoco.version>0.8.13</jacoco.version>
+        <site.version>4.0.0-M13</site.version>
+        <project.info.version>3.5.0</project.info.version>
 
         <!-- Allure (opcional) -->
-        <allure.version>2.24.0</allure.version>
+        <allure.version>2.14.0</allure.version>
         <aspectj.version>1.9.20</aspectj.version>
+
+        <!-- Clase principal por defecto -->
+        <app.mainClass>com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto</app.mainClass>
+
+        <!-- ======= PARÁMETROS DEL RUNNER JMETER ======= -->
+        <jmeter.plans.dir>${project.basedir}\jmeter_plans_mediplus</jmeter.plans.dir>
+        <jmeter.users>10,50,100</jmeter.users>
+        <jmeter.rampup>10</jmeter.rampup>
+        <jmeter.duration>60</jmeter.duration>
+        <jmeter.base.url>https://api.mediplus.com</jmeter.base.url>
+        <jmeter.bin>D:\Program Files\Apache Software Foundation\apache-jmeter-5.6.3\bin\jmeter.bat</jmeter.bin>
+        <jmeter.show.seconds>6</jmeter.show.seconds>
     </properties>
 
     <dependencies>
@@ -66,26 +83,32 @@
         </dependency>
 
         <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit.platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- ===== REST TESTING ===== -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-        <!-- REST Assured Core -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ===== REST ASSURED ===== -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${rest-assured.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -102,16 +125,32 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- ===== JSON PROCESSING ===== -->
-
+        <!-- ===== JSON PROCESSING (JACKSON) ===== -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
 
-        <!-- ===== LOGGING ===== -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- ===== LOGGING ===== -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -124,17 +163,7 @@
             <version>${logback.version}</version>
         </dependency>
 
-        <!-- ===== ASSERTIONS ===== -->
-
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.24.2</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- ===== ALLURE REPORTING (OPCIONAL) ===== -->
-
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
@@ -143,48 +172,47 @@
         </dependency>
 
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-rest-assured</artifactId>
-            <version>${allure.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- AspectJ para Allure -->
-        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
-
         <plugins>
-            <!-- ===== COMPILATION ===== -->
-
+            <!-- Compilador Java 21 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler.version}</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                    <encoding>UTF-8</encoding>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
+                    <release>21</release>
                 </configuration>
             </plugin>
 
-            <!-- ===== TESTING ===== -->
+            <!-- Ejecutar clases con main -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec.version}</version>
+            </plugin>
 
+            <!-- Surefire: ejecución de tests unitarios -->
+            <!-- Configuración MEJORADA de Surefire para tu pom.xml -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
                 <configuration>
-                    <!-- Test Discovery -->
+                    <!-- Test Discovery Patterns -->
                     <includes>
                         <include>**/*Test.java</include>
                         <include>**/*Tests.java</include>
@@ -198,15 +226,19 @@
                     <printSummary>true</printSummary>
                     <forkCount>1</forkCount>
                     <reuseForks>true</reuseForks>
+                    <failIfNoTests>false</failIfNoTests>
 
-                    <!-- System Properties -->
+                    <!-- System Properties para tests -->
                     <systemPropertyVariables>
                         <file.encoding>UTF-8</file.encoding>
                         <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                        <!-- Variables del proyecto -->
+                        <api.base.url>https://api.mediplus.com</api.base.url>
+                        <test.timeout>10000</test.timeout>
                     </systemPropertyVariables>
 
-                    <!-- JVM Arguments -->
+                    <!-- JVM Arguments para Java 21 -->
                     <argLine>
                         -Dfile.encoding=UTF-8
                         -Xmx1024m
@@ -215,161 +247,223 @@
                         --add-opens java.base/java.util=ALL-UNNAMED
                         --add-opens java.base/java.time=ALL-UNNAMED
                     </argLine>
+
+                    <!-- Reportes detallados -->
+                    <reportFormat>xml</reportFormat>
+                    <trimStackTrace>false</trimStackTrace>
                 </configuration>
             </plugin>
 
-            <!-- ===== PACKAGING ===== -->
-
+            <!-- JaCoCo: cobertura -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven-jar.version}</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto</mainClass>
-                        </manifest>
-                        <manifestEntries>
-                            <Built-By>${user.name}</Built-By>
-                            <Build-Time>${maven.build.timestamp}</Build-Time>
-                            <Implementation-Version>${project.version}</Implementation-Version>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-
-            <!-- Fat JAR con todas las dependencias -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven-assembly.version}</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
+                        <id>prepare-agent</id>
+                        <goals><goal>prepare-agent</goal></goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals><goal>report</goal></goals>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- ===== REPORTING ===== -->
-
-            <!-- Allure Maven Plugin -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.12.0</version>
                 <configuration>
-                    <reportVersion>${allure.version}</reportVersion>
+                    <!-- Usa una versión reciente del CLI (más robusta en Windows).
+                         Puedes empezar con 2.24.0; si la tienes descargada, mejor aún. -->
+                    <reportVersion>2.24.0</reportVersion>
+
                     <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
                     <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
-                </configuration>
-            </plugin>
 
-            <!-- Code Coverage -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.11</version>
+
+                </configuration>
                 <executions>
                     <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
+                        <id>allure-report</id>
+                        <phase>post-integration-test</phase>
+                        <goals><goal>report</goal></goals>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- Documentation -->
+            <!-- Uber-JAR con Shade -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.6.0</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <doclint>none</doclint>
-                    <quiet>true</quiet>
-                    <source>21</source>
-                </configuration>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <createDependencyReducedPom>true</createDependencyReducedPom>
+                            <transformers>
+                                <!-- Establece la clase principal del JAR ejecutable -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>${app.mainClass}</mainClass>
+                                </transformer>
+                                <!-- Une META-INF/services -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
-            <!-- Exec Plugin para ejecución directa -->
+            <!-- Site + reportes del proyecto -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <mainClass>com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto</mainClass>
-                    <cleanupDaemonThreads>false</cleanupDaemonThreads>
-                </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${site.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${project.info.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
             </plugin>
         </plugins>
     </build>
 
-    <!-- ===== PROFILES ===== -->
-
+    <!-- ======= PERFILES ======= -->
     <profiles>
-        <!-- Perfil por defecto -->
+        <!-- Perfil para ejecutar automáticamente el runner de JMeter -->
         <profile>
-            <id>desarrollo</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <api.base.url>https://dummyjson.com</api.base.url>
-                <test.timeout>10000</test.timeout>
-            </properties>
-        </profile>
-
-        <!-- Perfil sin Allure (para debugging rápido) -->
-        <profile>
-            <id>sin-allure</id>
+            <id>jmeter-performance</id>
             <build>
                 <plugins>
                     <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>${exec.version}</version>
+                        <executions>
+                            <execution>
+                                <id>run-jmeter-tests</id>
+                                <phase>integration-test</phase>
+                                <goals><goal>java</goal></goals>
+                                <configuration>
+                                    <mainClass>com.mediplus.pruebas.jmeter.LanzadorJMeter</mainClass>
+                                    <systemProperties>
+                                        <systemProperty>
+                                            <key>jmeter.plans.dir</key>
+                                            <value>${jmeter.plans.dir}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>jmeter.users</key>
+                                            <value>${jmeter.users}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>jmeter.rampup</key>
+                                            <value>${jmeter.rampup}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>jmeter.duration</key>
+                                            <value>${jmeter.duration}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>jmeter.base.url</key>
+                                            <value>${jmeter.base.url}</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>jmeter.bin</key>
+                                            <value>${jmeter.bin}</value>
+                                        </systemProperty>
+                                    </systemProperties>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>build-jmeter-summary-dashboard</id>
+                                <phase>verify</phase>
+                                <goals><goal>java</goal></goals>
+                                <configuration>
+                                    <mainClass>com.mediplus.pruebas.jmeter.GeneradorDashboardResumen</mainClass>
+                                    <systemProperties>
+                                        <systemProperty>
+                                            <key>summaryCsv</key>
+                                            <value>${project.basedir}\evidencias_jmeter_html\_summary.csv</value>
+                                        </systemProperty>
+                                        <systemProperty>
+                                            <key>outDir</key>
+                                            <value>${project.basedir}\evidencias_jmeter_html\_resumen_final</value>
+                                        </systemProperty>
+                                        <!-- umbrales opcionales -->
+                                        <systemProperty><key>warn.p90.ms</key><value>2000</value></systemProperty>
+                                        <systemProperty><key>bad.p90.ms</key><value>3000</value></systemProperty>
+                                        <systemProperty><key>warn.err.pct</key><value>5</value></systemProperty>
+                                        <systemProperty><key>bad.err.pct</key><value>10</value></systemProperty>
+                                    </systemProperties>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Opcional: en este perfil cambiamos la Main-Class del uber-jar al runner -->
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <argLine>
-                                -Dfile.encoding=UTF-8
-                                -Xmx1024m
-                                --add-opens java.base/java.lang=ALL-UNNAMED
-                            </argLine>
-                            <systemPropertyVariables>
-                                <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
-                            </systemPropertyVariables>
-                        </configuration>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>${maven-shade.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals><goal>shade</goal></goals>
+                                <configuration>
+                                    <transformers>
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                            <mainClass>com.mediplus.pruebas.jmeter.LanzadorJMeter</mainClass>
+                                        </transformer>
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                    </transformers>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
         </profile>
 
-        <!-- Perfil para reportes completos con Allure -->
+        <!-- Perfil alterno: deja como Main-Class tu ejecutor analítico (por defecto del proyecto) -->
+        <profile>
+            <id>analisis</id>
+            <properties>
+                <app.mainClass>com.mediplus.pruebas.analisis.EjecutorAnalisisCompleto</app.mainClass>
+            </properties>
+        </profile>
+
+<!--        &lt;!&ndash; Perfil para Allure &ndash;&gt;-->
+<!--        <profile>-->
+<!--            <id>allure</id>-->
+<!--            <build>-->
+<!--                <plugins>-->
+<!--                    <plugin>-->
+<!--                        <groupId>io.qameta.allure</groupId>-->
+<!--                        <artifactId>allure-maven</artifactId>-->
+<!--                        <version>${allure.version}</version>-->
+<!--                        <configuration>-->
+<!--                            <reportVersion>${allure.version}</reportVersion>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+<!--            </build>-->
+<!--        </profile>-->
+
         <profile>
             <id>reportes-completos</id>
             <build>
                 <plugins>
+                    <!-- Surefire con Allure habilitado -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
@@ -380,8 +474,13 @@
                                 -Xmx1024m
                                 --add-opens java.base/java.lang=ALL-UNNAMED
                             </argLine>
+                            <systemPropertyVariables>
+                                <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                            </systemPropertyVariables>
                         </configuration>
                     </plugin>
+
+                    <!-- Generar reporte Allure automáticamente -->
                     <plugin>
                         <groupId>io.qameta.allure</groupId>
                         <artifactId>allure-maven</artifactId>
@@ -398,26 +497,88 @@
                 </plugins>
             </build>
         </profile>
-
-        <!-- Perfil para CI/CD -->
-        <profile>
-            <id>ci</id>
-            <properties>
-                <maven.test.failure.ignore>false</maven.test.failure.ignore>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <parallel>classes</parallel>
-                            <threadCount>4</threadCount>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
     </profiles>
+
+    <!-- ======= REPORTS SECTION (para `mvn site`) ======= -->
+    <reporting>
+        <plugins>
+            <!-- Reportes de Surefire (resultados de tests) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
+                <configuration>
+                    <showSuccess>true</showSuccess>
+                    <outputName>surefire-report</outputName>
+                    <reportsDirectories>
+                        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    </reportsDirectories>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report-only</report>
+                            <report>failsafe-report-only</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- JaCoCo Coverage Reports -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- Información del proyecto -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${project.info.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>summary</report>
+                            <report>dependencies</report>
+                            <report>dependency-info</report>
+                            <report>plugins</report>
+                            <report>team</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- JavaDoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <doclint>none</doclint>
+                    <quiet>true</quiet>
+                    <source>21</source>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                            <report>test-javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>
